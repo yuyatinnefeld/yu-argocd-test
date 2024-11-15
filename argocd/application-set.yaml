@@ -1,0 +1,36 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: argocd-app
+  namespace: argocd
+spec:
+  generators:
+    - list:
+        elements:
+          - cluster: "cluster-c-xxxx-qa01"
+  template:
+    metadata:
+      name: "test-argocd-app"
+    spec:
+      project: default
+      source:
+        repoURL: "https://github.com/yuyatinnefeld/yu-argocd-test.git"
+        targetRevision: HEAD
+        path: helmcharts/create-cluster-service-account-chart
+        helm:
+          valueFiles:
+            - values-env-satu.yaml
+          parameters:
+            - name: project
+              value: "argocd-project"
+            - name: stage
+              value: "argocd-stage"
+            - name: openshiftCluster
+              value: "{{cluster}}"
+      destination:
+        server: 'https://kubernetes.default.svc'
+        namespace: default
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true

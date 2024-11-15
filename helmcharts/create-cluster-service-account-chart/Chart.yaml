@@ -1,0 +1,6 @@
+vicapiVersion: v2
+name: create-cluster-service-account-chart
+description: A Helm chart for testin the ServiceAccounts SetUp in a Multicluster environment
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
