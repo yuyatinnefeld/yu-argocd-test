@@ -16,7 +16,7 @@ spec:
       source:
         repoURL: "https://github.com/yuyatinnefeld/yu-argocd-test.git"
         targetRevision: HEAD
-        path: helmcharts/create-cluster-service-account-chart
+        path: helmcharts
         helm:
           valueFiles:
             - values-env-satu.yaml
