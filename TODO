@@ -8,3 +8,10 @@
     - create-cluster-service-accounts
     - create-cluster-secrets-chart
     - pushsecret-chart
+
+
+
+########
+- step 1 test template local testen -> DONE
+- step 2 template migration für Openshift pro cluster -> 4 helmcharts -> OPEN
+- step 3 4 -> ein helmch durch argocd prameter
