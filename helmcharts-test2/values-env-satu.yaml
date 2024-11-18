@@ -2,32 +2,6 @@ project: project-local
 stage: local-stage
 openshiftCluster: default-cluster
 
-clusters:
-  argocd-cluster:
-    relatedClusters:
-      - name: cluster-c
-      - name: cluster-d
-      - name: cluster-w1
-      - name: cluster-w2
-  cluster-d-xxxx-qa01:
-    relatedClusters:
-      - name: access
-      - name: cluster-c
-      - name: cluster-w1
-      - name: cluster-w2
-  cluster-w-xxxx-qa01:
-    relatedClusters:
-      - name: access
-      - name: cluster-c
-      - name: cluster-d
-      - name: cluster-w2
-  cluster-c-xxxx-qa02:
-    relatedClusters:
-      - name: access
-      - name: cluster-c
-      - name: cluster-d
-      - name: cluster-w1
-
 defaultCluster:
   relatedClusters:
     - name: default

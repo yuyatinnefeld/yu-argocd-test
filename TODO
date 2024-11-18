@@ -1,8 +1,9 @@
 - poc-multiCluster repo -> OK
 - run test cluster and test argocd -> OK
 - test argocd deployment -> OK
-- argocd sync wave -> OK
-- argocd param list (relatedClusters) -> OPEN
+- argocd sync wave -> OK helmcharts-test1
+- argocd param list (relatedClusters) -> OPEN - helmcharts-test2
+
 - new structure for 4 helmcharts 
     - create-cluster-service-accounts
     - create-cluster-secrets-chart
