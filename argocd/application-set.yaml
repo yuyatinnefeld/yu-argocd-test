@@ -16,7 +16,7 @@ spec:
       source:
         repoURL: "https://github.com/yuyatinnefeld/yu-argocd-test.git"
         targetRevision: HEAD
-        path: helmcharts
+        path: helmcharts-test1
         helm:
           valueFiles:
             - values-env-satu.yaml
@@ -25,7 +25,7 @@ spec:
               value: "argocd-project"
             - name: stage
               value: "argocd-stage"
-            - name: openshiftCluster
+            - name: openshift.cluster
               value: "{{cluster}}"
       destination:
         server: 'https://kubernetes.default.svc'

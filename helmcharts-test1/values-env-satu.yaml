@@ -1,0 +1,10 @@
+project: project-local
+stage: local-stage
+openshiftCluster: default-cluster
+
+defaultCluster:
+  relatedClusters:
+    - name: default
+
+clusterRole:
+  name: multimesh-clusterrole
