@@ -1,17 +1,6 @@
-- poc-multiCluster repo -> OK
-- run test cluster and test argocd -> OK
-- test argocd deployment -> OK
-- argocd sync wave -> OK helmcharts-test1
-- argocd param list (relatedClusters) -> OPEN - helmcharts-test2
-
-- new structure for 4 helmcharts 
-    - create-cluster-service-accounts
-    - create-cluster-secrets-chart
-    - pushsecret-chart
-
-
-
-########
 - step 1 test template local testen -> DONE
-- step 2 template migration für Openshift pro cluster -> 4 helmcharts -> OPEN
-- step 3 4 -> ein helmch durch argocd prameter
+- step 2 Openshift pro cluster -> 2 values.yaml in LAB -> DONE
+- step 3 LAB 1 <-> LAB 2 Conn test -> OPEN
+- step 3 pod.yaml -> job.yaml + cronjob
+- step 4 script verbessern (expire etc check)
+- step 5 ein values.yaml durch argocd prameter, höhere komplexität (if-else)

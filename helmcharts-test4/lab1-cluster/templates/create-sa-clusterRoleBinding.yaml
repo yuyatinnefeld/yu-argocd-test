@@ -1,0 +1,17 @@
+{{- range $v := .Values.cluster.cluster_list }}
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  labels:
+    project: multicluster
+  name: mc-{{ $v.name }}-to-{{ $.Values.cluster.short_name }}-clusterrole-binding
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: {{ $.Values.clusterRole.name}}
+subjects:
+  - kind: ServiceAccount
+    name: mc-{{ $v.name }}-to-{{ $.Values.cluster.short_name }}
+    namespace: {{ $.Values.project }}-{{ $.Values.stage }}
+{{- end }}

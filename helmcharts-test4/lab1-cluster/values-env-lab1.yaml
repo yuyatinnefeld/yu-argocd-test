@@ -1,0 +1,39 @@
+# General Parameter
+project: vp-istio-system
+stage: satu
+
+clusterRole:
+  name: multimesh-clusterrole
+
+serviceAccountName: "create-cluster-secrets-sa"
+
+# Cluster Parameter
+cluster:
+  short_name: "lab1" # TODO: replace with ArgoCD Parameter
+  server: "https://api.caas-ekad-satu01.rz.bankenit.de:6443" # TODO: update later
+  cluster_list: # TODO: update later
+    - name: lab1
+    - name: access
+    - name: okpc
+    - name: okpd
+    - name: okpw1
+
+# Push/Pull Secrets Parameter
+externalSecret:
+  secretStoreRef:
+    name: vault # TODO: update path later vault > vault-int-veb-vp-istio-system-shared-satu-edit
+    kind: SecretStore
+  pushSecret:
+    refreshInterval: 60s
+    data:
+      - secretKey: secret-key-ca-cert
+        vaultPath: kv/data/multicluster/lab1/ca-cert # TODO: change path
+        vaultProperty: ca_cert
+      - secretKey: secret-key-sa-secret-token
+        vaultPath: kv/data/multicluster/lab1/sa-secret-token # TODO: change path
+        vaultProperty: sa_secret_token
+      - secretKey: secret-key-kubeconfig
+        vaultPath: kv/data/multicluster/lab1/kubeconfig # TODO: change path
+        vaultProperty: kubeconfig
+  pullSecret:
+    refreshInterval: 60s

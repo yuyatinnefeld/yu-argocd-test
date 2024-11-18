@@ -1,0 +1,6 @@
+vicapiVersion: v2
+name: multimesh-cluster-communication-charts
+description: Helm charts for 1. create serviceaccounts, 2. create secrets, 3. push secrets into vault, 4. pull secrets from vault
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
