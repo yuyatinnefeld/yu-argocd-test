@@ -1,6 +1,7 @@
 project: project-local
 stage: local-stage
-openshiftCluster: default-cluster
+openshift:
+  cluster: default-cluster
 
 defaultCluster:
   relatedClusters:
